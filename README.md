@@ -2,7 +2,7 @@
 ### 实习做微信小程序项目的时候曾经做过表单验证，多个页面共用一套校验规则，当时能力不够，不会封装。最近看了设计模式，就写了这个。
 
 ### 第一步：封装策略对象
-``
+```
 var strategys = {
   'isNotEmpty': function (value, errorMsg) {
     if (value == '') return errorMsg;
@@ -14,15 +14,15 @@ var strategys = {
     if (!/(^1[3|5|8][0-9]{9}$)/.test(value)) return errorMsg;
   }
 }
-``
+```
 ### 第二步：声明验证函数Validator
-``
+```
 var Validator = function () {
   this.cache = [];
 }
-``
+```
 ### 第三步：给Validator函数添加add和start方法。
-``
+```
 Validator.prototype.add = function (value, rule, errorMsg) {
   //只有一个校验规则的时候
   var str = rule.split(':');//把minLength:6分割
@@ -42,9 +42,9 @@ Validator.prototype.start = function () {
   }
   return result;
 }
-``
+```
 ### 第四步：添加数据到校验规则，开始校验。
-``
+```
   var validator = new util.Validator(); // 创建一个Validator对象
   /* 添加一些效验规则 */
   validator.add(this.data.username, 'isNotEmpty', '用户名不能为空');
@@ -53,6 +53,6 @@ Validator.prototype.start = function () {
   var errorMsg = validator.start(); // 获得效验结果
   this.setData({ errorMsg: errorMsg})
   if(errorMsg.length == 0)console.log("验证通过，ajax提交数据")
-``
+```
 
 #### 参考链接：https://www.cnblogs.com/tugenhua0707/p/5198407.html#_labe7
