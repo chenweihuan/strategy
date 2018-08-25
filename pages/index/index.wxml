@@ -1,0 +1,32 @@
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">用户名</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="bindKeyInput" data-inputName='username' placeholder="用户名不能为空"/>
+            <text class='error'>{{errorMsg[0]?errorMsg[0]:''}}</text>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">密码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="bindKeyInput" data-inputName='password' placeholder="密码长度不能小于6位" type='password'/>
+            <text class='error'>{{errorMsg[1]?errorMsg[1]:''}}</text>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">电话号码</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="bindKeyInput" data-inputName='telephone' placeholder="请输入电话号码"/>
+            <text class='error'>{{errorMsg[2]?errorMsg[2]:''}}</text>
+        </view>
+    </view>
+</view>
+<view class="page__bd page__bd_spacing" style='padding:0 60rpx;margin-top:40rpx'>
+  <button class="weui-btn" type="primary" bindtap='submit'>提交</button>
+</view>

@@ -1,0 +1,10 @@
+.error{
+  position: absolute;
+  right: -10rpx;
+  top: 24rpx;
+  font-size: 28rpx;
+  color: red;
+}
+.weui-cell__bd{
+  position: relative;
+}
